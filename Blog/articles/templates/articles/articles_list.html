@@ -1,0 +1,40 @@
+
+{% extends 'baseTemplate.html' %}
+{% block content %}
+<input id="myInput" type="text" placeholder="Search..">
+<!-- <form type="get" action="." style="margin: 0">
+    <!--<input  id="search_box" type="text" name="search_box"  placeholder="Search..." >-->
+    <!--<button id="search_submit" type="submit" >Submit</button>-->
+
+
+{% for article in articles %}
+<div class="card">
+
+    <img src="{{ article.thumb.url}}"  style="width:100%">
+    <ul id="myUL">
+    <li> <a href="{% url 'articles:detail' slug=article.slug %}"/>{{article.title}}</a></li>
+    </ul>
+    <!--  <a href="{% url 'articles:detail' slug=article.slug %}"><p>Author:{{article.author}}</p></a>
+    <p>  <a href="{% url 'articles:detail' slug=article.slug %}"><p>{{article.date}}</p></a></p> -->
+    <p><button><a class="image" href="{% url 'articles:detail' slug=article.slug %}"/> <i class="fas fa-book-reader"></i></i></a></button></p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".card").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+
+
+{% endfor %}
+
+
+{% endblock %}

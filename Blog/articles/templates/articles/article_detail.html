@@ -1,0 +1,25 @@
+{% extends 'baseTemplate.html' %}
+
+{% block content %}
+{% block head_extra %}
+{{form.media}}
+{% endblock %}
+ <div class="article-detail">
+     <div class="article">
+       <!-- <img src="{{ article.thumb.url}}"/>-->
+         <h2>{{article.title}}</h2>
+         <p class="content-markdown">{{article.body }}</p>
+         <p>{{article.date}}</p>
+         <p1>Article by:{{article.author}}</p1>
+     </div>
+ </div>
+
+<script src="/static/jquery.min.js"></script>
+<script src="/static/readremaining.jquery.js"></script>
+<script>
+	$('body').readRemaining();
+</script>
+
+
+
+{% endblock %}

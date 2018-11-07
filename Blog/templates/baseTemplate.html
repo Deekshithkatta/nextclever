@@ -1,0 +1,80 @@
+{% load static from staticfiles %}
+
+</html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" />
+
+
+{% block head_extra %} {% endblock head_extra%}
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1><a href="{% url 'articles:list' %}"><h1>NextClever</h1></a></h1>
+
+        <nav>
+        <ul>
+
+            {% if user.is_authenticated %}
+                      <li>
+                         <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Logout</button>
+                         </form>
+                      </li>
+                    <li><a href="{%url 'articles:create' %}">New article</a></li>
+                  {% else %}
+
+
+                   <!--<li><a href="{% url 'accounts:signup' %}">SignUp</a></li>-->
+                 <li><a href="{% url 'accounts:login' %}">Login</a></li>
+
+
+                {% endif %}
+             <li><a hrf="#" >About</a></li>
+             <li><a href="#">Projects</a></li>
+             <li><a hrf="{% url 'articles:list' %}">Blog</a></li>
+
+
+
+
+            </ul>
+        </nav>
+{% block content %}
+
+{% endblock %}
+    </div>
+
+<!--Thirdy party jquery -->
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.5.1/marked.min.js"></script>
+
+<script type="text/javascript">
+
+
+    $(document).ready(function(){
+             $(".content-markdown").each(function(){
+                    var content =  $(".content-markdown").text()
+                    console.log(content)
+                    var markedContent = marked(content)
+                    console.log(content)
+                    $(this).html(markedContent)
+              })
+   })
+
+</script>
+
+
+</body>
+</html>

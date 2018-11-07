@@ -1,0 +1,198 @@
+{% load static from staticfiles %}
+
+</html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+ <body>
+     <header>
+          <div class="logo">NextClever</div>
+          <nav class="active">
+            <ul>
+               <li><a href="file:///F:/Enigma_Final/responsive/index.html" class="active">Home</a></li>
+               <li><a href="file:///F:/Enigma_Final/responsive/Team/t.html">About</a></li>
+               <li><a href="{% url 'articles:list' %}">Blog</a></li>
+            </ul>
+          </nav>
+          <div class="menu-toggle">
+         ...
+
+
+          </div>
+     </header>
+     	<script src="js/jquery.bxslider.min.js"></script><!--For Image Slider-->
+
+		<!--- ADD IMAGE SLIDER HERE -->
+		<div class="slide-wrap" style="width: 100%">
+			<section class="slider">
+				<ul class="slider1">
+					 <li><img src="img/b4.jpg"></li>
+           <li><img src="img/b2.jpg"></li>
+            <li><img src="img/everyone.jpg"></li>
+
+
+			   </ul>
+			</section>
+		</div>
+
+
+		<script type="text/javascript">
+			$('.slider1').bxSlider({
+				mode: 'fade',
+				captions: false,
+				auto:true,
+				pager:false,
+
+			});
+			$('.slider2').bxSlider({
+				pager:false,
+				captions: true,
+				maxSlides: 3,
+				minSlides: 1,
+				slideWidth: 230,
+				slideMargin: 10
+			});
+			$('.slider3').bxSlider({
+				mode: 'fade',
+				captions: false,
+				auto:true,
+				pager:false,
+				controls:false,
+			});
+		</script>
+
+<!--- End Slider -->
+
+<div class="animated ">
+ <div id="inner-wrapper">
+  <section class="one-third">
+  	 <div class="circle" id="pp">
+  	 </div>
+  	 <h3>About us</h3>
+      <img src="img/about.png" width="33%">
+  	  <p >
+  	  	We are the humble,passionate students of Computer Science and Information Science Department of AJIET
+  	  </p>
+  </section>
+
+  <section class="one-third">
+  	<div class="circle">
+  	</div>
+  	<h3>Our Moto</h3>
+     <img src="img/moto.png" width="33%">
+  	<p>
+A good mind will improve the community it is embedded within and  can adapt quickly to human needs and technology change.
+
+  	</p>
+  </section>
+
+  <section class="one-third">
+  	<div class="circle">
+  	</div>
+  	<h3>Join us </h3>
+     <img src="img/joinus.png" width="59%">
+  	<p>
+    Any humble student can join our association to be a part of it for better future,We will provide continous updates in this regards.
+   </p>
+  </section>
+<div  class="clearfix"></div>
+ <article>
+ 	<img src="img/lrn.jpg" class="circle-image">
+ </article>
+ <aside>
+ 	<h3 class="animated fadeIn infinite">Events</h3>
+ 	<br>
+ 	<ul class="gym">
+ 		<li><h4>Seminars</h4></li>
+ 		<li><h4>Workshops</h4></li>
+ 		<li><h4>Internships</h4></li>
+ 		<li><h4>Training sessions</h4></li>
+ 	</ul>
+ </aside>
+
+
+
+<div class="clearfix"></div>
+
+
+<h1>Towards humanity.....</h1>
+
+
+  <section class="one-third">
+  	<h3>Social Awaress</h3>
+  	 <img src="img/oos_medical.jpg">
+  	<p>
+      Apart from curriculum helping the society is the most required nowadays, To cultivate helping nature and to become a successful in professional life
+  	</p>
+  </section>
+
+  <section class="one-third">
+  	<h3>Help</h3>
+  	 <img src="img/help.jpeg">
+        <p>
+          We are humans and helping the others is the part of our association,we are very happpy to help the poors apart from curriculum.
+        </p>
+  </section>
+
+  <section class="one-third">
+  	<h3>Students Mentoring</h3>
+  	<img src="img/pexels-photo-459971.jpeg">
+  	<p>
+  		With our well qualified lectures we are greatly pleasure to mentoring the students in their work
+  	</p>
+  </section>
+ </div>
+ </div>
+
+ <!--End of inner wrapper-->
+
+ <!--footer-->
+ <footer>
+
+ 	 <div id="footer-inner">
+      	 <section class="one-third" id="footer-third">
+      	 	<h3>Contact</h3>
+      	 		<p class="footercontact">Association Enigma<br>
+      	 		 <b class="phone">AJIET</b><br>
+             Mangaluru
+      	 		 <br>
+      	 		</p>
+      	 </section>
+
+ <section class="one-third" id="footer-third">
+ 	<h3>Social</h3>
+ 	<br>
+ 	  <ul class="Social">
+ 	  	<li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+
+ 	  	<li><a href="" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+
+         <li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
+ 	  </ul>
+ </section>
+
+ <section class="one-third" id="footer-third-last">
+   <h3>Pages</h3>
+   <br>
+    <h5>
+     <a href="index.html">home</a>-
+     <a href="#">About</a>-
+     <a href="#">gallery</a>-
+     <a href="#">contact</a>
+   </h5>
+</section>
+ </footer>
+ <footer class="second" id="footer-last">
+ 	<p></p><a href="dxtkatta.ml">&copy DXT</a><br>
+ <h6 class="animated bounce">feedback</h6>
+ 	</footer>
+</div>
+
+
+   </body>
+</html>
