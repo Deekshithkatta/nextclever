@@ -26,7 +26,7 @@ SECRET_KEY = '6pev)4iow&@lmr9c=s78s^y1bmh(-7$)^*se+fl9#&_oss#p!e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dxtkatta.herokuapp.com']
 
 
 # Application definition
